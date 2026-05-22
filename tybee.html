@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Investment Memorandum | Tybee Island Family Opportunity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:      #f7f3ed;
+      --warm-white: #faf8f5;
+      --ink:        #1c1a17;
+      --forest:     #1d3326;
+      --forest-lt:  #2a4a37;
+      --gold:       #9a7435;
+      --gold-lt:    #c9a55a;
+      --gold-pale:  #f0e4c8;
+      --border:     rgba(29, 51, 38, 0.12);
+      --muted:      #7a7268;
+      --card:       #ffffff;
+      --red:        #8b2e2e;
+      --green:      #1d5c3a;
+      --radius:     10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== GRAIN ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+    /* ===== TOP BAR ===== */
+    .topbar {
+      background: var(--forest);
+      padding: 14px 0;
+      animation: fadeDown 0.5s ease both;
+    }
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-left {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .topbar-right {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold-lt);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--forest);
+      padding: 72px 0 64px;
+      animation: fadeUp 0.7s 0.1s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item { }
+    .hero-meta-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 4px;
+    }
+    .hero-meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ===== MAP ===== */
+    .map-section {
+      margin: 0;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .property-map {
+      width: 100%;
+      height: 280px;
+      border: none;
+      display: block;
+      filter: sepia(0.2) contrast(1.05);
+    }
+
+    /* ===== PREPARED FOR ===== */
+    .prepared-for {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 28px 36px;
+      margin: 48px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      animation: fadeUp 0.6s ease both;
+    }
+    .prepared-for p {
+      font-size: 0.92rem;
+      color: var(--forest);
+      line-height: 1.75;
+    }
+    .prepared-for strong { font-weight: 500; color: var(--forest); }
+
+    /* ===== SECTION ===== */
+    .section { margin-bottom: 72px; animation: fadeUp 0.6s ease both; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--forest);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.8;
+    }
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 56px 0;
+    }
+
+    /* ===== CONTEXT CARDS ===== */
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .context-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .context-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 4px;
+    }
+    .context-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .context-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ===== OPPORTUNITY STRIP ===== */
+    .opportunity-strip {
+      background: var(--forest);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin: 28px 0;
+    }
+    .opportunity-strip p {
+      font-size: 1.0rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+    .opportunity-strip strong { color: var(--gold-lt); font-weight: 400; }
+
+    /* ===== STAT GRID ===== */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-value.gold { color: var(--gold); }
+    .stat-value.green { color: var(--green); }
+    .stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .stat-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 4px;
+      opacity: 0.7;
+    }
+
+    /* ===== ARCHITECTURE ===== */
+    .arch-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .arch-layer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .arch-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      background: var(--gold-pale);
+      border: 1px solid rgba(154, 116, 53, 0.25);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .arch-content { flex: 1; }
+    .arch-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 4px;
+    }
+    .arch-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .arch-body strong { color: var(--ink); font-weight: 400; }
+    .arch-figure {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--gold);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .arch-figure-label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== TABLES ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 24px;
+    }
+    .data-table thead th {
+      background: var(--forest);
+      color: rgba(255,255,255,0.7);
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-bottom: none;
+    }
+    .data-table thead th:first-child { color: var(--gold-lt); }
+    .data-table tbody td {
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink);
+    }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr.highlight td { background: rgba(29, 51, 38, 0.04); }
+    .data-table tbody tr.highlight td:first-child { color: var(--forest); font-weight: 500; }
+    .good { color: var(--green); }
+    .caution { color: #8b5a00; }
+    .neutral { color: var(--muted); }
+
+    /* ===== RETURN CARDS ===== */
+    .return-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .return-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .return-card.primary {
+      background: var(--forest);
+      border-color: var(--forest);
+    }
+    .return-horizon {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .return-card.primary .return-horizon { color: rgba(255,255,255,0.5); }
+    .return-irr {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .return-card.primary .return-irr { color: var(--gold-lt); }
+    .return-irr-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .return-card.primary .return-irr-label { color: rgba(255,255,255,0.4); }
+    .return-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+    .return-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .return-card.primary .return-row { border-color: rgba(255,255,255,0.1); }
+    .return-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .r-label { color: var(--muted); }
+    .return-card.primary .r-label { color: rgba(255,255,255,0.5); }
+    .r-value { color: var(--ink); font-weight: 400; }
+    .return-card.primary .r-value { color: rgba(255,255,255,0.85); }
+    .r-value.gold { color: var(--gold); }
+    .return-card.primary .r-value.gold { color: var(--gold-lt); }
+
+    /* ===== RISK TABLE ===== */
+    .risk-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .risk-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .risk-name { font-size: 0.88rem; color: var(--ink); font-weight: 400; }
+    .risk-rating {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+      text-align: center;
+      padding: 4px 10px;
+      border-radius: 20px;
+      align-self: start;
+    }
+    .risk-low { background: rgba(29,92,58,0.1); color: var(--green); }
+    .risk-med { background: rgba(139,90,0,0.1); color: #8b5a00; }
+    .risk-mitigated { background: rgba(29,51,38,0.08); color: var(--forest); }
+    .risk-mitigation { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+    /* ===== FAMILY EQUITY ===== */
+    .family-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .family-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+    .family-card.primary-member {
+      border-color: var(--gold);
+      background: linear-gradient(145deg, #fff 0%, #fdf9f3 100%);
+    }
+    .family-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 2px;
+    }
+    .family-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .family-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 16px;
+    }
+    .family-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 10px;
+    }
+    .family-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .fi-label { color: var(--muted); }
+    .fi-value { color: var(--ink); font-weight: 400; text-align: right; }
+    .fi-value.gold { color: var(--gold); }
+    .fi-value.green { color: var(--green); }
+
+    /* ===== GOVERNANCE ===== */
+    .governance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .gov-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .gov-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .gov-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .gov-body strong { color: var(--ink); font-weight: 400; }
+
+    /* ===== URGENCY ===== */
+    .urgency-box {
+      background: #fdf4f4;
+      border: 1px solid rgba(139,46,46,0.2);
+      border-left: 3px solid var(--red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 28px 36px;
+      margin: 28px 0;
+    }
+    .urgency-box p {
+      font-size: 0.92rem;
+      color: #5c1a1a;
+      line-height: 1.75;
+    }
+    .urgency-box strong { font-weight: 500; }
+
+    /* ===== VERDICT ===== */
+    .verdict {
+      background: var(--forest);
+      border-radius: var(--radius);
+      padding: 48px;
+      margin: 28px 0;
+    }
+    .verdict-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+    .verdict-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .verdict-title em { font-style: italic; color: var(--gold-lt); }
+    .verdict-body {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 700px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .verdict-body strong { color: rgba(255,255,255,0.9); font-weight: 400; }
+    .verdict-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .verdict-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .verdict-item strong { color: var(--gold-lt); font-weight: 400; display: block; margin-bottom: 4px; }
+
+    /* ===== LEGAL CHECKLIST ===== */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .check-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .check-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--gold);
+      background: var(--gold-pale);
+      border: 1px solid rgba(154,116,53,0.2);
+      border-radius: 4px;
+      padding: 3px 8px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-content { }
+    .check-title {
+      font-size: 0.9rem;
+      color: var(--ink);
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+    .check-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ===== DISCLOSURE ===== */
+    .disclosure {
+      background: var(--gold-pale);
+      border: 1px solid rgba(154,116,53,0.2);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 48px 0 0;
+    }
+    .disclosure-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-family: 'DM Mono', monospace;
+    }
+    .disclosure-body {
+      font-size: 0.8rem;
+      color: var(--forest);
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      margin-top: 72px;
+    }
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--forest);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+    .footer-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 760px) {
+      .context-grid, .family-grid, .return-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .governance-grid { grid-template-columns: 1fr; }
+      .verdict-items { grid-template-columns: 1fr; }
+      .risk-row { grid-template-columns: 1fr; }
+      .hero-meta { gap: 24px; }
+      .verdict { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">Private Investment Memorandum &nbsp;|&nbsp; Confidential</div>
+      <div class="topbar-right">Prepared for Camille &nbsp;|&nbsp; May 2026</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">Family Wealth Preservation and Investment</div>
+      <h1>The Tybee Island<br><em>Opportunity</em></h1>
+      <div class="hero-sub">A Private Analysis of a Significant Family Investment</div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Location</div>
+          <div class="hero-meta-value">Tybee Island, Georgia</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Appraised Value</div>
+          <div class="hero-meta-value">$800,000</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Capital Required</div>
+          <div class="hero-meta-value">$230,000</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Investment Grade</div>
+          <div class="hero-meta-value">Significant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <iframe
+      class="property-map"
+      src="https://www.google.com/maps?q=Tybee+Island+Georgia+31328&output=embed"
+      allowfullscreen
+      loading="lazy"
+      title="Tybee Island, Georgia">
+    </iframe>
+  </div>
+
+  <main class="container">
+
+    <!-- PREPARED FOR -->
+    <div class="prepared-for" style="margin-top:48px;">
+      <p>This memorandum has been prepared by <strong>Charles</strong>, your former husband, and is presented with full transparency about that relationship. It is intended for your independent review alongside your financial advisor. No decision is being requested. The purpose is to present a complete, honest, and rigorous analysis of a time-sensitive investment opportunity that is also a family preservation event. All numbers are documented. All risks are disclosed. You are encouraged to verify everything independently.</p>
+    </div>
+
+    <!-- SECTION: SITUATION -->
+    <section class="section">
+      <div class="section-label">01 &mdash; The Situation</div>
+      <h2 class="section-title">A Family Property at a Crossroads</h2>
+      <p class="section-body">A family property on Tybee Island, Georgia, appraised at $800,000, is at risk of being sold with no residual proceeds to the family. Without intervention, the property is lost permanently. This analysis presents a structured path by which you can prevent that outcome, preserve the asset for the family, and in doing so, position yourself for a significant return on a disciplined investment of $230,000.</p>
+
+      <div class="context-grid" style="margin-top:28px;">
+        <div class="context-card">
+          <div class="context-name">Faye (Nana)</div>
+          <div class="context-role">Property Owner</div>
+          <div class="context-desc">86 years old. Current owner of the Tybee Island property. Eligible for a Home Equity Conversion Mortgage (HECM reverse mortgage) of $400,000. Loves Camille as a daughter and is fully supportive of this arrangement. Her primary goal is to keep the property in the family and maintain her dignity and care.</div>
+        </div>
+        <div class="context-card">
+          <div class="context-name">Scarlett</div>
+          <div class="context-role">Family Member</div>
+          <div class="context-desc">Current family stakeholder in the property. Without intervention, she receives zero from the forced sale. Under this structure, she participates in ongoing rental income through a profit-sharing arrangement, receiving meaningful benefit from an asset she would otherwise lose entirely.</div>
+        </div>
+        <div class="context-card" style="border-color: var(--gold);">
+          <div class="context-name">Camille</div>
+          <div class="context-role">Investor &amp; Managing Member</div>
+          <div class="context-desc">The catalyst of this entire arrangement. Your $230,000 investment is what makes every other outcome possible. You serve as managing member of the LLC with final decision-making authority. You are the sole beneficiary of the property at Faye's passing. At that point Faye's 25% LLC share transfers to Scarlett and the LLC continues with Camille 60% and Scarlett 40%.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: URGENCY -->
+    <section class="section">
+      <div class="section-label">02 &mdash; The Urgency</div>
+      <h2 class="section-title">Why the Timing Matters</h2>
+      <div class="urgency-box">
+        <p>The $230,000 capital requirement is <strong>immediate and time-sensitive.</strong> The property is currently at risk of a forced sale that would yield zero proceeds to any family member. Faye can qualify for the reverse mortgage within <strong>30 days.</strong> The window in which this investment can be structured and executed is open now. Once the property is sold, this opportunity disappears permanently. An $800,000 Tybee Island beach duplex in a documented 8.45% annual appreciation market will not be available to this family again.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: ARCHITECTURE -->
+    <section class="section">
+      <div class="section-label">03 &mdash; The Financial Architecture</div>
+      <h2 class="section-title">How the Structure Works</h2>
+      <p class="section-body">Three instruments operate simultaneously, each serving a distinct purpose. Together they preserve the property, fund the investment, and generate income for all parties.</p>
+
+      <div class="arch-stack">
+        <div class="arch-layer">
+          <div class="arch-number">1</div>
+          <div class="arch-content">
+            <div class="arch-title">Your HELOC on 410 N. Errol Court</div>
+            <div class="arch-body">A $400,000 Home Equity Line of Credit secured by your Atlanta home, which is valued at $1.3M-$1.5M and owned free and clear. You draw <strong>$230,000</strong> at closing. The remaining <strong>$170,000</strong> sits untouched as your personal reserve. Interest-only payment on the $230,000 draw is approximately <strong>$1,382/month</strong> at the current 7.21% rate. This is covered entirely by your rental income distributions from the first month.</div>
+          </div>
+          <div>
+            <div class="arch-figure">$230K</div>
+            <div class="arch-figure-label">Your investment</div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="arch-number">2</div>
+          <div class="arch-content">
+            <div class="arch-title">Faye's Reverse Mortgage (HECM)</div>
+            <div class="arch-body">A federally insured Home Equity Conversion Mortgage on the Tybee Island property. Faye receives <strong>$400,000</strong> in liquidity. There is <strong>no monthly payment.</strong> The balance accrues at approximately 6.5% annually. The loan becomes due only at Faye's passing. At that time, you have <strong>12 months</strong> to resolve it via refinance, accumulated reserves, or sale. Critically: the HECM is non-recourse. You can never owe more than the property's value.</div>
+          </div>
+          <div>
+            <div class="arch-figure">$0</div>
+            <div class="arch-figure-label">Monthly payment</div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="arch-number">3</div>
+          <div class="arch-content">
+            <div class="arch-title">The LLC: Income and Management Vehicle</div>
+            <div class="arch-body">A Georgia LLC is formed to manage the Tybee Island property. It collects all rental income, pays operating expenses, and distributes net income to members. Title to the property remains in Faye's name (required for the reverse mortgage). You serve as <strong>managing member with final decision-making authority</strong> on all operational matters. At Faye's passing, Faye's 25% transfers to Scarlett. The property transfers to you via living trust. The LLC continues: <strong>Camille 60%, Scarlett 40%.</strong></div>
+          </div>
+          <div>
+            <div class="arch-figure">60%</div>
+            <div class="arch-figure-label">Your LLC share</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: MARKET -->
+    <section class="section">
+      <div class="section-label">04 &mdash; The Market</div>
+      <h2 class="section-title">Tybee Island: A Documented Appreciation Market</h2>
+      <p class="section-body">This is not a speculative market. The appreciation data on Tybee Island is documented and independently verifiable.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value gold">8.45%</div>
+          <div class="stat-label">Annual Appreciation</div>
+          <div class="stat-note">Latest 12 months, NeighborhoodScout</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Top 10%</div>
+          <div class="stat-label">Georgia Markets</div>
+          <div class="stat-note">Higher than 90% of GA cities</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value green">$940K</div>
+          <div class="stat-label">Median Home Value</div>
+          <div class="stat-note">Tybee Island, Q4 2024</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$800K</div>
+          <div class="stat-label">Your Entry Value</div>
+          <div class="stat-note">Below current market median</div>
+        </div>
+      </div>
+
+      <div class="opportunity-strip" style="margin-top: 24px;">
+        <p>You are entering a market where the median home already exceeds <strong>$940,000</strong> at a price of <strong>$800,000.</strong> Your entry point is below the current median. In a market appreciating at 8.45% annually, your asset grows faster than the reverse mortgage accrues (6.5%). The equity gap between the property value and the reverse mortgage balance widens every year in your favor.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: MONTHLY MATH -->
+    <section class="section">
+      <div class="section-label">05 &mdash; The Monthly Position</div>
+      <h2 class="section-title">Cash Flow from Day One</h2>
+      <p class="section-body">Your only monthly obligation is the HELOC payment. Rental income from the Tybee Island duplex covers it entirely and generates positive cash flow to you from the first month of operation.</p>
+
+      <p style="font-size:0.88rem; color:var(--muted); margin-bottom:18px;">All income flows through a four-tier waterfall before any member receives a distribution. Your HELOC is covered before any family member sees a dollar.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Waterfall step</th>
+            <th>Conservative $4K gross</th>
+            <th>Moderate $5.4K gross</th>
+            <th>Strong $8.4K gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. Operating expenses (25%)</td>
+            <td>($1,000)</td>
+            <td>($1,350)</td>
+            <td>($2,100)</td>
+          </tr>
+          <tr class="highlight">
+            <td>2. HELOC reimbursement (priority)</td>
+            <td>($1,382)</td>
+            <td>($1,382)</td>
+            <td>($1,382)</td>
+          </tr>
+          <tr>
+            <td>3. Reserve fund &mdash; Phase 1: $500/mo to $25-50K target</td>
+            <td>($500)</td>
+            <td>($500)</td>
+            <td>($500)</td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;Phase 2: $300/mo maintenance (after target)</td>
+            <td colspan="3" style="color:var(--muted); font-size:0.8rem;">Reduces to $300/mo once reserve target is reached</td>
+          </tr>
+          <tr>
+            <td>Distributable to members</td>
+            <td>$1,118</td>
+            <td>$2,168</td>
+            <td>$4,418</td>
+          </tr>
+          <tr class="highlight">
+            <td>4. Camille 60%</td>
+            <td class="good"><strong>$671</strong></td>
+            <td class="good"><strong>$1,301</strong></td>
+            <td class="good"><strong>$2,651</strong></td>
+          </tr>
+          <tr>
+            <td>Faye 25%</td>
+            <td>$280</td>
+            <td>$542</td>
+            <td>$1,105</td>
+          </tr>
+          <tr>
+            <td>Scarlett 15%</td>
+            <td>$168</td>
+            <td>$325</td>
+            <td>$663</td>
+          </tr>
+          <tr>
+            <td>Reverse mortgage payment</td>
+            <td colspan="3" style="text-align:center; color: var(--green);">$0 &mdash; Accrues silently. Handled at passing via refinance.</td>
+          </tr>
+          <tr>
+            <td>Elective RM prepayment</td>
+            <td colspan="3" style="text-align:center; color:var(--muted); font-size:0.8rem;">Optional. Builds equity for all members. No obligation.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:0.8rem; color:var(--muted); margin-top:14px;">Your HELOC is covered in every scenario before any distribution occurs. The investment does not cost you money monthly. It pays you.</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: RETURNS -->
+    <section class="section">
+      <div class="section-label">06 &mdash; Investment Returns</div>
+      <h2 class="section-title">The Long-Term Picture</h2>
+      <p class="section-body">Returns are modeled at three time horizons using a <strong>conservative 5% annual appreciation rate,</strong> well below Tybee Island's documented 8.45%. Your capital at risk is $230,000.</p>
+
+      <div class="return-grid">
+        <div class="return-card">
+          <div class="return-horizon">3-Year Horizon</div>
+          <div class="return-irr">44%</div>
+          <div class="return-irr-label">Annualized IRR</div>
+          <div class="return-details">
+            <div class="return-row">
+              <span class="r-label">Property value</span>
+              <span class="r-value">$926K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Reverse mortgage</span>
+              <span class="r-value">$485K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net equity acquired</span>
+              <span class="r-value gold">$441K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net rental income</span>
+              <span class="r-value">+$15K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Total return on $230K</span>
+              <span class="r-value gold">198%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="return-card primary">
+          <div class="return-horizon">5-Year Horizon</div>
+          <div class="return-irr">25%</div>
+          <div class="return-irr-label">Annualized IRR</div>
+          <div class="return-details">
+            <div class="return-row">
+              <span class="r-label">Property value</span>
+              <span class="r-value">$1,021K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Reverse mortgage</span>
+              <span class="r-value">$551K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net equity acquired</span>
+              <span class="r-value gold">$470K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net rental income</span>
+              <span class="r-value">+$25K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Total return on $230K</span>
+              <span class="r-value gold">215%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="return-card">
+          <div class="return-horizon">8-Year Horizon</div>
+          <div class="return-irr">16%</div>
+          <div class="return-irr-label">Annualized IRR</div>
+          <div class="return-details">
+            <div class="return-row">
+              <span class="r-label">Property value</span>
+              <span class="r-value">$1,182K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Reverse mortgage</span>
+              <span class="r-value">$652K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net equity acquired</span>
+              <span class="r-value gold">$530K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Net rental income</span>
+              <span class="r-value">+$40K</span>
+            </div>
+            <div class="return-row">
+              <span class="r-label">Total return on $230K</span>
+              <span class="r-value gold">247%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem; color:var(--muted); margin-top:16px;">At Tybee Island's actual documented appreciation of 8.45%, all figures above are materially higher. These projections use a conservatively reduced rate to stress-test the model.</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: RISK -->
+    <section class="section">
+      <div class="section-label">07 &mdash; Risk Profile</div>
+      <h2 class="section-title">Risk Assessment: Near Zero With Documentation</h2>
+      <p class="section-body">Each risk below has been identified and a specific structural countermeasure assigned. The investment is not risk-free. It is near-zero risk when properly documented and structured.</p>
+
+      <div class="risk-grid">
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">Monthly cash flow gap</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">Rental income stops; HELOC payment falls on personal income</div>
+          </div>
+          <div class="risk-rating risk-mitigated">Mitigated</div>
+          <div class="risk-mitigation">Third-party property manager ensures continuous operations. 3-month LLC reserve fund funded from first rental income. Conservative scenario still covers HELOC by $418/month.</div>
+        </div>
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">Legal claim to property</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">Estate plan not executed; family disputes at passing</div>
+          </div>
+          <div class="risk-rating risk-mitigated">Mitigated</div>
+          <div class="risk-mitigation">Living trust naming you as sole beneficiary executed before any money moves. Operating agreement legally binding. No funds transfer without signed documents.</div>
+        </div>
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">Reverse mortgage payoff</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">Cannot clear the balance within 12-month window</div>
+          </div>
+          <div class="risk-rating risk-mitigated">Mitigated</div>
+          <div class="risk-mitigation">$170K HELOC reserve available. LLC rental reserves accumulate monthly. At passing, property refinanced at 70% LTV covers the balance. HECM is non-recourse: you cannot owe more than the property value.</div>
+        </div>
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">Property and casualty</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">Coastal storm, flood, structural damage on Tybee Island</div>
+          </div>
+          <div class="risk-rating risk-mitigated">Mitigated</div>
+          <div class="risk-mitigation">Mandatory flood insurance (FEMA zone), full property insurance, and LLC liability coverage required at LLC formation. Non-negotiable conditions before operations begin.</div>
+        </div>
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">Family relationship</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">Scarlett contests the arrangement at passing</div>
+          </div>
+          <div class="risk-rating risk-mitigated">Mitigated</div>
+          <div class="risk-mitigation">Scarlett participates in ongoing income distributions from a property she would have received zero from. She has financial incentive to cooperate. Her profit-sharing agreement is a separate, signed document.</div>
+        </div>
+        <div class="risk-row">
+          <div>
+            <div class="risk-name">410 N. Errol Court exposure</div>
+            <div style="font-size:0.78rem; color:var(--muted); margin-top:3px;">HELOC default puts your Atlanta home at risk</div>
+          </div>
+          <div class="risk-rating risk-low">Low</div>
+          <div class="risk-mitigation">Rental income covers the HELOC payment in every scenario modeled. The payment would only fall on personal income if the property produced zero rental revenue, which requires complete vacancy across both units simultaneously.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: FAMILY EQUITY -->
+    <section class="section">
+      <div class="section-label">08 &mdash; Family Equity</div>
+      <h2 class="section-title">What Each Party Receives</h2>
+      <p class="section-body">Without this arrangement, every party receives zero from the Tybee Island property. The baseline for comparison is not the current $800,000 value. It is zero.</p>
+
+      <div class="family-grid">
+        <div class="family-card">
+          <div class="family-name">Faye</div>
+          <div class="family-role">Property Owner</div>
+          <div class="family-divider"></div>
+          <div class="family-item">
+            <span class="fi-label">Reverse mortgage</span>
+            <span class="fi-value gold">$400,000</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Monthly income (25% share)</span>
+            <span class="fi-value">$280 - $1,105/mo</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Home preserved</span>
+            <span class="fi-value green">Yes</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Without this plan</span>
+            <span class="fi-value" style="color:var(--red);">$0</span>
+          </div>
+        </div>
+
+        <div class="family-card">
+          <div class="family-name">Scarlett</div>
+          <div class="family-role">Income Beneficiary</div>
+          <div class="family-divider"></div>
+          <div class="family-item">
+            <span class="fi-label">LLC membership</span>
+            <span class="fi-value">Profits interest only</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Monthly income (15% share)</span>
+            <span class="fi-value">$450 - $945/mo</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">5-year total income</span>
+            <span class="fi-value gold">$27K - $57K</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Without this plan</span>
+            <span class="fi-value" style="color:var(--red);">$0</span>
+          </div>
+        </div>
+
+        <div class="family-card primary-member">
+          <div class="family-name">Camille</div>
+          <div class="family-role">Managing Member &amp; Beneficiary</div>
+          <div class="family-divider"></div>
+          <div class="family-item">
+            <span class="fi-label">Investment</span>
+            <span class="fi-value">$230,000 (HELOC)</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Monthly net position</span>
+            <span class="fi-value green">+$418 to +$2,398</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Full ownership at passing</span>
+            <span class="fi-value green">Yes, via living trust</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">5-year net equity</span>
+            <span class="fi-value gold">$470,000+</span>
+          </div>
+          <div class="family-item">
+            <span class="fi-label">Investment grade</span>
+            <span class="fi-value gold">Significant &mdash; 25% IRR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: GOVERNANCE -->
+    <section class="section">
+      <div class="section-label">09 &mdash; LLC Governance and Protection</div>
+      <h2 class="section-title">Your Control. Your Protection.</h2>
+      <p class="section-body">As managing member, you have final authority on all operational decisions. The operating agreement is also designed to protect you from any financial opacity or self-dealing concerns going forward.</p>
+
+      <div class="governance-grid">
+        <div class="gov-card">
+          <div class="gov-title">Third-Party Property Management</div>
+          <div class="gov-body">All rent collected and expenses paid through a licensed, bonded property management firm. No managing member ever handles cash directly. Monthly statements distributed to all members independently by the management company.</div>
+        </div>
+        <div class="gov-card">
+          <div class="gov-title">Mandatory Quarterly Distributions</div>
+          <div class="gov-body">The operating agreement requires <strong>80% of net cash flow</strong> to be distributed quarterly. This is not at any member's discretion. It is a contractual obligation enforceable by any member.</div>
+        </div>
+        <div class="gov-card">
+          <div class="gov-title">Annual CPA Financial Review</div>
+          <div class="gov-body">An independent CPA prepares annual financial statements and distributes them directly to all members. No member prepares their own financial reporting.</div>
+        </div>
+        <div class="gov-card">
+          <div class="gov-title">STR Platform Transparency</div>
+          <div class="gov-body">If operated as a short-term rental on Airbnb or VRBO, all members receive <strong>read-only dashboard access.</strong> Every booking, payout, and review is visible to all parties in real time.</div>
+        </div>
+        <div class="gov-card">
+          <div class="gov-title">Expense Caps and Disclosure</div>
+          <div class="gov-body">Any single expense above $2,500 requires written notice to all members. Any transaction involving a party related to any member must be disclosed before it occurs. No member loans permitted.</div>
+        </div>
+        <div class="gov-card">
+          <div class="gov-title">Camille's Final Authority</div>
+          <div class="gov-body">As managing member, Camille holds <strong>unilateral decision-making authority</strong> on rental strategy, capital improvements, vendor selection, and timing of any future sale. No minority member can override these decisions.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: LEGAL -->
+    <section class="section">
+      <div class="section-label">10 &mdash; Legal Requirements</div>
+      <h2 class="section-title">What Must Happen Before Any Money Moves</h2>
+      <p class="section-body">These are not optional. They are the conditions under which this investment is near-zero risk. Without them, no capital should be deployed.</p>
+
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-num">01</div>
+          <div class="check-content">
+            <div class="check-title">Living Trust Executed in Faye's Name</div>
+            <div class="check-desc">Camille named as sole beneficiary. Property transfers to Camille at Faye's passing outside of probate. This document is the foundation of the entire investment.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-num">02</div>
+          <div class="check-content">
+            <div class="check-title">LLC Operating Agreement Signed by All Parties</div>
+            <div class="check-desc">Camille as managing member with final authority. Scarlett as profits-interest-only participant with no equity claim and no capital account. Mandatory distribution schedule. Expense caps. All governance provisions documented.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-num">03</div>
+          <div class="check-content">
+            <div class="check-title">Scarlett's Profit-Sharing Agreement</div>
+            <div class="check-desc">A separate, signed document defining Scarlett's income distribution percentage, her understanding that she holds no equity in the property, and the termination conditions of her participation.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-num">04</div>
+          <div class="check-content">
+            <div class="check-title">Flood and Property Insurance Bound at Closing</div>
+            <div class="check-desc">FEMA flood zone coverage mandatory for Tybee Island coastal property. Full property insurance and LLC liability coverage required before first tenant or guest occupies either unit.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-num">05</div>
+          <div class="check-content">
+            <div class="check-title">HELOC Originated on 410 N. Errol Court</div>
+            <div class="check-desc">$400,000 line recommended. $230,000 drawn at closing. $170,000 held as standing reserve. Figure.com recommended as primary lender given credit profile. Application should precede all other steps.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-num">06</div>
+          <div class="check-content">
+            <div class="check-title">Faye's Reverse Mortgage Closed</div>
+            <div class="check-desc">HECM originated with Faye as sole borrower. Title remains in Faye's name throughout her lifetime. The reverse mortgage and the LLC are parallel structures that do not conflict as long as title stays with Faye.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- VERDICT -->
+    <div class="verdict">
+      <div class="verdict-eyebrow">The Assessment</div>
+      <h2 class="verdict-title">This is a <em>significant</em> investment opportunity</h2>
+      <p class="verdict-body">It is not marginal. It is not net zero. The combination of a below-market entry price, positive cash flow from day one, a top-decile appreciating coastal market, non-recourse downside protection, and a near-zero risk profile when properly documented places this investment in a category that is not accessible on the open market. It exists because it is a family arrangement. That is the edge. The numbers confirm it rigorously.</p>
+      <div class="verdict-items">
+        <div class="verdict-item">
+          <strong>Entry at 29 cents on the dollar</strong>
+          $230,000 to secure an $800,000 asset in a market where the median home is $940,000.
+        </div>
+        <div class="verdict-item">
+          <strong>Positive carry from month one</strong>
+          Rental income exceeds HELOC cost in every scenario. The investment pays you while you hold it.
+        </div>
+        <div class="verdict-item">
+          <strong>25% annualized IRR at 5 years</strong>
+          Modeled at conservative 5% appreciation vs. the documented 8.45%. Returns are materially higher at actual market rates.
+        </div>
+        <div class="verdict-item">
+          <strong>Non-recourse protection</strong>
+          You cannot owe more than the property is worth. FHA insurance covers any gap between the reverse mortgage balance and sale price.
+        </div>
+        <div class="verdict-item">
+          <strong>Full ownership at passing</strong>
+          Living trust transfers the property directly to you. No probate. No family contest if documented correctly.
+        </div>
+        <div class="verdict-item">
+          <strong>Near-zero risk with documentation</strong>
+          Every identified risk has a structural countermeasure. The documentation is not a formality. It is the investment.
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCLOSURE -->
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION: STRUCTURE DIAGRAM -->
+    <section class="section">
+      <div class="section-label">11 &mdash; Structure at a Glance</div>
+      <h2 class="section-title">Full Architecture: Top-Down View</h2>
+      <p class="section-body">Every layer of the investment mapped from capital source through post-death transition. Each node represents a distinct structural element. The two phases are separated by the moment of Faye's passing.</p>
+
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-top:24px; overflow:hidden;">
+        <svg width="100%" viewBox="0 0 680 1000" role="img" style="display:block;">
+          <title>Tybee Island Investment Structure</title>
+          <desc>Top-down structural diagram of the full investment architecture</desc>
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+
+          <!-- colors adapted for light mode report -->
+          <style>
+            .d-box { fill:#ffffff; stroke:rgba(29,51,38,0.15); stroke-width:0.75; }
+            .d-teal { fill:#e1f5ee; stroke:#0f6e56; stroke-width:0.75; }
+            .d-blue { fill:#e6f1fb; stroke:#185fa5; stroke-width:0.75; }
+            .d-amber { fill:#faeeda; stroke:#854f0b; stroke-width:0.75; }
+            .d-green { fill:#eaf3de; stroke:#3b6d11; stroke-width:0.75; }
+            .d-gray { fill:#f1efe8; stroke:#5f5e5a; stroke-width:0.75; }
+            .d-purple { fill:#eeedfe; stroke:#534ab7; stroke-width:0.75; }
+            .d-lbl { font-family:'Jost',sans-serif; font-size:13px; font-weight:500; fill:#1d3326; }
+            .d-sub { font-family:'Jost',sans-serif; font-size:11px; font-weight:300; fill:#7a7268; }
+            .d-phase { font-family:'Jost',sans-serif; font-size:11px; fill:#9a7435; letter-spacing:0.1em; }
+            .d-arr { fill:none; stroke:rgba(29,51,38,0.3); stroke-width:1.2; }
+            .d-dash { fill:none; stroke:rgba(29,51,38,0.2); stroke-width:0.8; stroke-dasharray:4 3; }
+            .d-green-arr { fill:none; stroke:#1d9e75; stroke-width:1.5; }
+          </style>
+
+          <text class="d-phase" x="340" y="20" text-anchor="middle">PHASE 1 — DURING FAYE'S LIFETIME</text>
+
+          <!-- Camille -->
+          <rect x="220" y="30" width="240" height="44" rx="8" class="d-teal"/>
+          <text class="d-lbl" x="340" y="48" text-anchor="middle">Camille</text>
+          <text class="d-sub" x="340" y="65" text-anchor="middle">Investor and managing member</text>
+
+          <!-- HELOC -->
+          <rect x="40" y="116" width="280" height="68" rx="8" class="d-blue"/>
+          <text class="d-lbl" x="180" y="136" text-anchor="middle">HELOC — 410 N. Errol Court</text>
+          <text class="d-sub" x="180" y="154" text-anchor="middle">$400K line · $230K drawn · $170K reserve</text>
+          <text class="d-sub" x="180" y="172" text-anchor="middle">$1,382/mo interest-only · Figure.com</text>
+
+          <!-- HECM -->
+          <rect x="360" y="116" width="280" height="68" rx="8" class="d-amber"/>
+          <text class="d-lbl" x="500" y="136" text-anchor="middle">HECM — Faye (86)</text>
+          <text class="d-sub" x="500" y="154" text-anchor="middle">$400K · 6.5% accrual · $0/mo payment</text>
+          <text class="d-sub" x="500" y="172" text-anchor="middle">Title stays in Faye's name</text>
+
+          <line x1="280" y1="74" x2="200" y2="116" class="d-arr" marker-end="url(#arr2)"/>
+          <line x1="400" y1="74" x2="480" y2="116" class="d-arr" marker-end="url(#arr2)"/>
+
+          <!-- $230K arrow -->
+          <line x1="120" y1="184" x2="220" y2="232" class="d-green-arr" marker-end="url(#arr2)"/>
+          <text class="d-sub" x="110" y="212" text-anchor="middle" style="fill:#1d9e75;">$230K</text>
+
+          <!-- Reserve note -->
+          <rect x="10" y="258" width="72" height="28" rx="6" class="d-dash" stroke-dasharray="4 3"/>
+          <text class="d-sub" x="46" y="277" text-anchor="middle">$170K idle</text>
+
+          <!-- LLC -->
+          <rect x="140" y="232" width="400" height="68" rx="8" class="d-teal"/>
+          <text class="d-lbl" x="340" y="252" text-anchor="middle">Tybee Island Management LLC</text>
+          <text class="d-sub" x="340" y="270" text-anchor="middle">Camille 60% (managing) · Faye 25% · Scarlett 15%</text>
+          <text class="d-sub" x="340" y="288" text-anchor="middle">Georgia LLC · Camille has final authority on all decisions</text>
+
+          <line x1="480" y1="184" x2="420" y2="232" class="d-arr" marker-end="url(#arr2)"/>
+
+          <!-- Tybee Duplex -->
+          <rect x="160" y="344" width="360" height="52" rx="8" class="d-green"/>
+          <text class="d-lbl" x="340" y="364" text-anchor="middle">Tybee Island Duplex</text>
+          <text class="d-sub" x="340" y="382" text-anchor="middle">$800K appraised · 8.45% annual appreciation · 2 rental units</text>
+
+          <line x1="340" y1="300" x2="340" y2="344" class="d-arr" marker-end="url(#arr2)"/>
+          <text class="d-sub" x="358" y="326">Manages</text>
+
+          <!-- rental income loop -->
+          <path d="M520 344 Q558 322 558 300 Q558 278 520 270" class="d-dash" marker-end="url(#arr2)"/>
+          <text class="d-sub" x="572" y="314">Rental income</text>
+
+          <!-- Waterfall -->
+          <rect x="80" y="440" width="500" height="124" rx="8" class="d-gray"/>
+          <text class="d-lbl" x="330" y="460" text-anchor="middle">Income waterfall</text>
+          <text class="d-sub" x="100" y="482">1 · Operating expenses (25% of gross)</text>
+          <text class="d-sub" x="100" y="500">2 · HELOC reimbursement — $1,382/mo (priority, before any member distribution)</text>
+          <text class="d-sub" x="100" y="518">3 · Reserve fund — Phase 1: $500/mo to $25-50K target · Phase 2: $300/mo</text>
+          <text class="d-sub" x="100" y="536">4 · 60/40 distributions · Elective RM prepayment (optional)</text>
+
+          <line x1="340" y1="396" x2="340" y2="440" class="d-arr" marker-end="url(#arr2)"/>
+          <text class="d-sub" x="356" y="422">Net income</text>
+
+          <!-- Distributions -->
+          <rect x="60" y="612" width="230" height="68" rx="8" class="d-teal"/>
+          <text class="d-lbl" x="175" y="634" text-anchor="middle">Camille — 60%</text>
+          <text class="d-sub" x="175" y="652" text-anchor="middle">$671-$2,651/mo</text>
+          <text class="d-sub" x="175" y="668" text-anchor="middle">HELOC covered by priority</text>
+
+          <rect x="390" y="612" width="230" height="68" rx="8" class="d-purple"/>
+          <text class="d-lbl" x="505" y="634" text-anchor="middle">Family — 40%</text>
+          <text class="d-sub" x="505" y="652" text-anchor="middle">Faye 25% · Scarlett 15%</text>
+          <text class="d-sub" x="505" y="668" text-anchor="middle">$448-$1,768/mo combined</text>
+
+          <line x1="240" y1="564" x2="175" y2="612" class="d-arr" marker-end="url(#arr2)"/>
+          <line x1="420" y1="564" x2="505" y2="612" class="d-arr" marker-end="url(#arr2)"/>
+
+          <!-- Phase divider -->
+          <line x1="40" y1="730" x2="640" y2="730" stroke="rgba(154,116,53,0.4)" stroke-width="0.75" stroke-dasharray="6 4"/>
+          <text class="d-phase" x="340" y="748" text-anchor="middle">AT FAYE'S PASSING — THE TRANSITION</text>
+
+          <!-- Transition boxes -->
+          <rect x="40" y="758" width="174" height="52" rx="8" class="d-amber"/>
+          <text class="d-lbl" x="127" y="778" text-anchor="middle">Living trust</text>
+          <text class="d-sub" x="127" y="798" text-anchor="middle">Property → Camille</text>
+
+          <rect x="253" y="758" width="174" height="52" rx="8" class="d-amber"/>
+          <text class="d-lbl" x="340" y="778" text-anchor="middle">Refinance</text>
+          <text class="d-sub" x="340" y="798" text-anchor="middle">70% LTV · clears HECM</text>
+
+          <rect x="466" y="758" width="174" height="52" rx="8" class="d-amber"/>
+          <text class="d-lbl" x="553" y="778" text-anchor="middle">LLC restructures</text>
+          <text class="d-sub" x="553" y="798" text-anchor="middle">Faye 25% → Scarlett</text>
+
+          <line x1="214" y1="784" x2="253" y2="784" class="d-arr" marker-end="url(#arr2)"/>
+          <line x1="427" y1="784" x2="466" y2="784" class="d-arr" marker-end="url(#arr2)"/>
+
+          <!-- Phase 2 -->
+          <text class="d-phase" x="340" y="852" text-anchor="middle">PHASE 2 — ONGOING AFTER PASSING</text>
+
+          <rect x="140" y="862" width="400" height="68" rx="8" class="d-teal"/>
+          <text class="d-lbl" x="340" y="882" text-anchor="middle">LLC continues indefinitely</text>
+          <text class="d-sub" x="340" y="900" text-anchor="middle">Camille 60% managing member · Scarlett 40% passive</text>
+          <text class="d-sub" x="340" y="918" text-anchor="middle">$1M+ appreciating asset · shared equity · rental income</text>
+
+          <line x1="340" y1="810" x2="340" y2="862" class="d-arr" marker-end="url(#arr2)"/>
+
+        </svg>
+      </div>
+    </section>
+
+    <div class="disclosure">
+      <div class="disclosure-title">Disclosure from Charles</div>
+      <div class="disclosure-body">This analysis was prepared by Charles, your former husband, with the full intention of transparency. He has presented this to you because he believes it is a genuine and significant opportunity for you, for Faye (Nana), and for the family. He has no financial stake in your decision. All data points are independently verifiable and sourced from public market records, federal HECM guidelines, and current lender rate data. You are encouraged to review this with your financial advisor, your own attorney, and any other advisor you trust before making any decision. No urgency should override your comfort and independent verification of every claim made here.</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Private Investment Memorandum</div>
+        <div class="footer-note">This document is prepared for informational purposes only and does not constitute financial, legal, or tax advice. All projections are estimates based on documented market data and conservative modeling assumptions. Individual results will vary. Consult a licensed financial advisor, estate attorney, and CPA before making any investment decision. Property appreciation figures sourced from NeighborhoodScout Q4 2024 and Redfin November 2025 data.</div>
+      </div>
+      <div class="footer-date">May 2026<br>Tybee Island, GA</div>
+    </div>
+  </footer>
+
+</body>
+</html>
